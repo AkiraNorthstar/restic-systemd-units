@@ -1,0 +1,10 @@
+[Unit]
+Description=@schedule@ backup of %i
+
+[Timer]
+OnCalendar=@schedule@
+RandomizedDelaySec=500s
+Unit=restic-backup@%i.service
+
+[Install]
+WantedBy=timers.target

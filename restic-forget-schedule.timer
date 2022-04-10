@@ -1,0 +1,10 @@
+[Unit]
+Description=@schedule@ forget of %i
+
+[Timer]
+OnCalendar=@schedule@
+RandomizedDelaySec=500s
+Unit=restic-forget@%i.service
+
+[Install]
+WantedBy=timers.target

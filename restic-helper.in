@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+set -a
+for CONF in /etc/restic/restic.conf ./restic.conf; do
+    if [[ -f $CONF ]]; then
+	echo "* reading configuration from $CONF" >&2
+	. $CONF
+    fi
+done
+set +a
+
+exec "$@"

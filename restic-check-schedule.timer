@@ -1,0 +1,10 @@
+[Unit]
+Description=@schedule@ check of %i
+
+[Timer]
+OnCalendar=@schedule@
+RandomizedDelaySec=500s
+Unit=restic-check@%i.service
+
+[Install]
+WantedBy=timers.target

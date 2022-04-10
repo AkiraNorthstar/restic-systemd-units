@@ -1,0 +1,10 @@
+[Unit]
+Description=@schedule@ prune of %i
+
+[Timer]
+OnCalendar=@schedule@
+RandomizedDelaySec=500s
+Unit=restic-prune@%i.service
+
+[Install]
+WantedBy=timers.target
